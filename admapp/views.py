@@ -36,3 +36,21 @@ def addcc(request):
             return render(request,'admpage.html')
         else:
             return render(request,'addcc.html')
+
+def adc(request):
+    return render(request,'addclub.html')
+
+
+def addclub(request):
+    if request.method=='POST':
+        club_name=request.POST['club_name']
+        club_id=request.POST['club_id']
+        branch=request.POST['branch']
+        ree=requests.post('https://cosc-api.herokuapp.com/clubs',data={'club_name':club_name,'club_id':club_id,'branch':branch})
+        q=ree.json()['message']
+        print(q)
+        if q=="Succesful":
+            return render(request,'admpage.html')
+        else:
+            content={"message":"Invalid"}
+            return render(request,'addclub.html',content)
