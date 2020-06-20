@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Previous Events List</h2>
+  <br/> 
+<table class="table table-bordered" method="GET" >
+  {% csrf_token %}
+    
+      <tr>
+        <th name="event_id">Event_id</th>
+        <th name="event_name">Event_name</th>
+        <th name="event_branch">Event_branch</th>
+        <th name="club_name">Club_name</th>
+        <th name="event_description">Event_description</th>
+        <th name="event_venue">Event_venue</th>
+        <th name="event_loc">Event_loc</th>
+
+      </tr>
+      
+        {% for i in l %}
+        <tr>
+          <td>{{i.event_id}}</td>
+          <td>{{i.event_name}}</td>
+          <td>{{i.event_branch}}</td>
+          <td>{{i.club_name}}</td>
+          <td>{{i.event_description}}</td>
+          <td>{{i.event_venue}}</td>
+          <td>{{i.event_loc}}</td>
+
+        {%endfor%}
+      </tr>
+	
+  </table>
+  
+  <a href="{% url 'vc' %}">OK</a>
+</div>
+
+</body>
+</html>

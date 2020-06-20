@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center">Previous CC List</h2>
+  <br/> 
+<table class="table table-bordered" method="GET" >
+  {% csrf_token %}
+    
+      <tr>
+        <th name="roll_no">Roll_no</th>
+        <th name="name">Name</th>
+        <th name="club_id">Club_id</th>
+        <th name="ph_no">Phone_no</th>
+        <th name="email">Email</th>
+      </tr>
+      
+        {% for i in x %}
+        <tr>
+          <td>{{i.roll_no}}</td>
+          <td>{{i.name}}</td>
+          <td>{{i.club_id}}</td>
+          <td>{{i.ph_no}}</td>
+          <td>{{i.email}}</td>
+        {%endfor%}
+      </tr>
+	
+  </table>
+  
+<a href="{% url 'vc' %}">OK</a>
+</div>
+
+</body>
+</html>

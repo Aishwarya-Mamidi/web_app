@@ -19,10 +19,12 @@
       <li class="active"><a href="#">Home</a></li>
       <li class="active"><a href="{% url 'adm' %}">Add CC Member</a></li>
       <li class="active"><a href="{% url 'adc' %}">Add Club</a></li>
-      <li class="active"><a href="#">View Previous CC Members</a></li>
+      <li class="active"><a href="{% url 'viewcc' %}">View Previous CC Members</a></li>
+      <li class="active"><a href="{% url 'viewevent' %}">View Previous Events</a></li>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>

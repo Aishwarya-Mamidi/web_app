@@ -54,3 +54,27 @@ def addclub(request):
         else:
             content={"message":"Invalid"}
             return render(request,'addclub.html',content)
+            
+def vc(request):
+    return render(request,'admpage.html')
+
+def viewcc(request):
+    w=requests.get('https://cosc-api.herokuapp.com/ccdetails')
+    x=w.json()
+    print(x)
+    context={
+     'x':x
+    }
+    return render(request,'prevcc.html',context)
+
+def viewevent(request):
+    t=requests.get('https://cosc-api.herokuapp.com/events')
+    l=t.json()
+    print(l)
+    context={
+     'l':l
+    }
+    return render(request,'prevevents.html',context)
+
+def logout(request):
+    return render(request,'login.html')
