@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +9,34 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <body style="background-image:url('{% static "images/pic.jpg" %}')" no-repeat center fixed;background-size: cover;> 
 </head>
-<body>
-
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" style="background-color:pink;color:pink;padding:20px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Hello Admin</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="active"><a href="{% url 'adm' %}">Add CC Member</a></li>
-      <li class="active"><a href="{% url 'adc' %}">Add Club</a></li>
-      <li class="active"><a href="{% url 'viewcc' %}">View Previous CC Members</a></li>
-      <li class="active"><a href="{% url 'viewevent' %}">View Previous Events</a></li>
+     <table>
+     <tr>
+     <th><a class="navbar-brand" href="#">Hello Admin</a></th>
+     </div>
+     <ul class="nav navbar-nav">
+     <th><li class="active"><a href="{% url 'vc' %}">Home</a></li></th>
+     <th><li class="active"><a href="{% url 'adm' %}">Add CCMember</a></li></th>
+     <th><li class="active"><a href="{% url 'adc' %}">Add Club</a></li></th>
+     <th><li class="active"><a href="{% url 'viewcc' %}">View Previous CCMembers</a></li></th>
+     <th><li class="active"><a href="{% url 'viewevent' %}">View Previous Events</a></li></th>
 
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+     <ul class="nav navbar-nav navbar-right">
+     <th><li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li></th>
+     </tr>
+     </table>
     </ul>
   </div>
 </nav>
-  
-<div class="container">
+<!--<div class="container">
+  <p><font color="800000">
+  <p><font face="Algerian">
   <h3>This is the Admin Page</h3>
   <p>Basic design. We Can add more stuff afterwards.</p>
-</div>
-
+</div>-->
 </body>
 </html>

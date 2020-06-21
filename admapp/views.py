@@ -26,7 +26,7 @@ def addcc(request):
     if request.method=='POST':
         name=request.POST['name']
         roll_no=request.POST['roll_no']
-        club_id=request.POST['club_id']
+        club_id=int(request.POST['club_id'])
         ph_no=request.POST['ph_no']
         email=request.POST['email'] 
         re=requests.post('https://cosc-api.herokuapp.com/addcc',data={'name':name,'roll_no':roll_no,'club_id':club_id,'ph_no':ph_no,'email':email})
@@ -61,7 +61,6 @@ def vc(request):
 def viewcc(request):
     w=requests.get('https://cosc-api.herokuapp.com/ccdetails')
     x=w.json()
-    print(x)
     context={
      'x':x
     }
@@ -70,7 +69,6 @@ def viewcc(request):
 def viewevent(request):
     t=requests.get('https://cosc-api.herokuapp.com/events')
     l=t.json()
-    print(l)
     context={
      'l':l
     }
