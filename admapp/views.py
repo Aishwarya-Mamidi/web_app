@@ -72,7 +72,7 @@ def viewevent(request):
     context={
      'l':l
     }
-    return render(request,'prevevents.html',context)
+    return render(request,'preeventsmod.html',context)
 
 def logout(request):
     return render(request,'login.html')
