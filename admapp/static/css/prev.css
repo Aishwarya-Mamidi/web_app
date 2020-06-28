@@ -5,7 +5,7 @@
     background:linear-gradient(45deg,black,grey);
 }
 
-.card.card-title,.card p{
+.card.card-title,.card p,.card h4{
     color:white;
 }
 

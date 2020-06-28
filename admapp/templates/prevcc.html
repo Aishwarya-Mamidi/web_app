@@ -33,7 +33,7 @@
           <a class="nav-link" href="{% url 'adm' %}"><i class="fa fa-cc" style="margin-right:4px;"></i>Add CC</a>
         </li>
         <li class="nav-item active" style="margin-right: 15px;">
-          <a class="nav-link" href="{% url 'viewcc' %}"><i class="fa fa-users" style="margin-right:4px;"></i>Prev CC</a>
+          <a class="nav-link" href="{% url 'viewcc' %}"><i class="fa fa-users" style="margin-right:4px;"></i>View Past CC Members</a>
         </li>
         <li class="nav-item" style="margin-right: 15px;">
           <a class="nav-link" href="{% url 'viewevent' %}"><i class="fa fa-bullhorn" style="margin-right:4px;"></i>View Past Events</a>
@@ -57,7 +57,7 @@
     <div class="col-lg-4">
       <div class="card shadow-lg card-in" style="width: 18rem;">
         <div class="card-body">
-          <h4 class="card-title">{{i.name}}</h5>
+          <h4 class="card-title" style="color:white;">{{i.name}}</h4>
           <p>{{i.roll_no}}</p>
         </div>
         <ul class="list-group list-group-flush">
