@@ -18,8 +18,6 @@ def accept(request):
         content={"message":"Invalid Credentials"}
         return render(request,'login.html',content)
 
-def adm(request):
-    return render(request,'addcc.html')
 
 
 def addcc(request):
@@ -73,6 +71,16 @@ def viewevent(request):
      'l':l
     }
     return render(request,'preeventsmod.html',context)
+
+def clubid(request):
+    print("hii")
+    k=requests.get('https://cosc-api.herokuapp.com/clubid')
+    c=k.json()
+    
+    context={
+        'c':c
+    }
+    return render(request,'addcc.html',context)
 
 def logout(request):
     return render(request,'login.html')
